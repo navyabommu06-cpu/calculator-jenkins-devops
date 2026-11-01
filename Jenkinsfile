@@ -46,10 +46,9 @@ pipeline {
         }
     }
 }
-stage('Check Docker') {
+stage('Build Docker Image') {
     steps {
-        bat 'echo %PATH%'
-        bat 'where docker'
-        bat 'docker --version'
+        echo 'Building Docker image'
+        bat '"C:\\Users\\bnavy\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" build -t python-calculator .'
     }
 }
