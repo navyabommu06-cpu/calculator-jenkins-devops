@@ -48,7 +48,9 @@ pipeline {
 }
 stage('Build Docker Image') {
     steps {
-        echo 'Building Docker image'
+        echo 'Checking Docker executable'
+        bat 'dir "C:\\Users\\bnavy\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe"'
+        bat '"C:\\Users\\bnavy\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" --version'
         bat '"C:\\Users\\bnavy\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" build -t python-calculator .'
     }
 }
